@@ -107,9 +107,16 @@ average_IOU = []
 
 for image in data:
 	for i in data:
-		if i == image:
+		if i == image['name']:
 			average_IOU.append(cal_IOU(image, i))
+		else:
+			pass
 
 print(average_IOU/len(average_IOU))
 
 ```
+
+
+### RESULT
+
+Average IoU was 0.88 on the 1000 val dataset
