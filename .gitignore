@@ -1,7 +1,10 @@
 #dataset
 
 data
+10k/
 
+*.json
+*.txt
 
 #virtual env
 

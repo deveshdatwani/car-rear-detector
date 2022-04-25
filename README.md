@@ -66,3 +66,20 @@ The training can be started witht the command
 ``` 
 !python train.py --img 640 --cfg yolov5s.yaml --hyp hyp.scratch.yaml --batch 32 --epochs 100 --data data.yaml --weights yolov5s.pt --workers 24 --name yolo_det
 ```
+
+
+### Testing accuracy 
+
+To test accuracy, 
+
+```
+./darknet detector 10k/val cfg/obj.data cfg/yolov3.cfg yolov3.weights < images_files.txt
+```
+
+The above command detects every image in the folder 10k/val and outputs the predictions stores in file path in images_files.txt.
+
+It can be outputted to a new txt file which will be used to carry out detection accuracy
+
+
+
+
