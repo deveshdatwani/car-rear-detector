@@ -80,6 +80,36 @@ The above command detects every image in the folder 10k/val and outputs the pred
 
 It can be outputted to a new txt file which will be used to carry out detection accuracy
 
+For this, I wrote a script to calculate IoU.
 
+```
+cal_IOU(coord_1, coord_2):
 
+	x_right = coord1[0]
+	x_left = coord2[0]
+	y_right = coord2[1]
+	y_left = coord2[1]
 
+	intersection_area = (x_right - x_left) * (y_bottom - y_top)
+
+	return intersection_area
+
+import os
+
+images = os.listdir('10k/val')
+with open('detections.txt') as file:
+	data = file.read()
+
+with open('annotations.json') as annot:
+	data = json.loads(annot.read()))
+
+average_IOU = []
+
+for image in data:
+	for i in data:
+		if i == image:
+			average_IOU.append(cal_IOU(image, i))
+
+print(average_IOU/len(average_IOU))
+
+```
