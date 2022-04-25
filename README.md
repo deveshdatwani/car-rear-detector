@@ -83,7 +83,7 @@ It can be outputted to a new txt file which will be used to carry out detection 
 For this, I wrote a script to calculate IoU.
 
 ```
-cal_IOU(coord_1, coord_2):
+def cal_IOU(coord_1, coord_2):
 
 	x_right = coord1[0]
 	x_left = coord2[0]
@@ -120,3 +120,11 @@ print(average_IOU/len(average_IOU))
 ### RESULT
 
 Average IoU was 0.88 on the 1000 val dataset
+
+
+
+
+
+## NOTE
+
+The .json and .txt files were above 100mb, hence I didn't add them to the repo
