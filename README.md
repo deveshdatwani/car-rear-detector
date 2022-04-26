@@ -73,7 +73,7 @@ The training can be started witht the command
 To test accuracy, 
 
 ```
-./darknet detector test cfg/voc.data yolo-voc.cfg yolo-voc.weights -dont_show -ext_output < data/train.txt > result.txt
+./darknet detector test cfg/voc.data yolo-voc.cfg yolo-voc.weights -dont_show -ext_output < data/train.txt > detection.txt
 ```
 
 The above command detects every image in the folder 10k/val and outputs the predictions stores in file path in data.txt
@@ -119,7 +119,6 @@ for image in data:
 			pass
 
 print(average_IOU/len(average_IOU))
-
 ```
 
 
