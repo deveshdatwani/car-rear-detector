@@ -73,12 +73,18 @@ The training can be started witht the command
 To test accuracy, 
 
 ```
-./darknet detector 10k/val cfg/obj.data cfg/yolov3.cfg yolov3.weights < images_files.txt
+./darknet detector test cfg/voc.data yolo-voc.cfg yolo-voc.weights -dont_show -ext_output < data/train.txt > result.txt
 ```
 
-The above command detects every image in the folder 10k/val and outputs the predictions stores in file path in images_files.txt.
+The above command detects every image in the folder 10k/val and outputs the predictions stores in file path in data.txt
 
-It can be outputted to a new txt file which will be used to carry out detection accuracy
+To create data.txt, I used the command 
+
+```
+ls bdd100k_images_10k/bdd100k/images/10k/val > data.txt
+```
+
+This outputs directory contents into a new txt file which will be used to carry out detection accuracy
 
 For this, I wrote a script to calculate IoU.
 
